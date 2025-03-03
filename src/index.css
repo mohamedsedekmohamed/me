@@ -1,0 +1,71 @@
+  @import "tailwindcss";
+@keyframes back {
+  0%, 100% {
+    background-image: linear-gradient(black, white);
+   }
+  25%{
+   transform: rotate(90deg);
+  }
+  50% {
+    transform:  rotate(180deg);
+    background-color: black;
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+}
+
+.animate-back {
+  animation: back 4s ease-in-out infinite;
+}
+
+
+@keyframes backsun {
+  0%, 100% {
+    background-image: linear-gradient(orange, white);
+   }
+  25%{
+   transform: rotate(90deg);
+  }
+  50% {
+    transform:  rotate(180deg);
+    background-color: black;
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+}
+
+.animate-backsun {
+  animation: backsun 4s ease-in-out infinite;
+}
+
+
+@keyframes autoRun3d {
+  from {
+    transform: perspective(800px) rotateY(-360deg);
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+
+@keyframes animateBrightness {
+  10% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.1);
+  }
+  90% {
+    filter: brightness(1);
+  }
+}
+
+.animate-autoRun3d {
+  animation: autoRun3d 20s linear infinite;
+}
+
+.animate-animateBrightness {
+  animation: animateBrightness 20s linear infinite;
+}
