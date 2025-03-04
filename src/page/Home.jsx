@@ -82,27 +82,27 @@ const Home = () => {
           {currentText}<span className="ml-1 animate-blink">|</span>
         </h1>
         <div className="w-full  flex justify-center gap-4 items-center mt-4">
-      <i className={`text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
+      <i className={` text-2xl md:text-4xl  transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
       <a href="https://www.facebook.com/share/19wsEt1wcs/">
             <FaFacebookSquare />
           </a>
         </i>
-        <i className={`text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
+        <i className={`text-2xl md:text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
           <a href="https://github.com/mohamedsedekmohamed">
             <FaGithub />
           </a>
         </i>
-        <i className={`text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
+        <i className={`text-2xl md:text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
           <a href="https://wa.me/01550622443">
             <FaWhatsappSquare />
           </a>
         </i>
-        <i className={`text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
+        <i className={`text-2xl md:text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
           <a href="https://www.linkedin.com/in/mohamed-seddek/">
             <FaLinkedin />
           </a>
         </i>
-        <i className={`text-4xl transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
+        <i className={`text-2xl md:text-4xl  transition ease-in hover:scale-120 ${!darkMode ? 'text-white' : 'text-black'}`}>
           <a href="tel:+201550622443">
             <MdAddCall />
           </a>

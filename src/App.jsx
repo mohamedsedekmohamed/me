@@ -21,7 +21,7 @@ const App = () => {
   };
 
   return (
-    <div className="box-border" ref={section1Ref}> 
+    <div className="box-border m-0 p-0" ref={section1Ref}> 
           <Navbar   section4Ref={section4Ref} section1Ref={section1Ref} section2Ref={section2Ref} section3Ref={section3Ref} scrollToSection={scrollToSection}/>
       <div className="relative">
     <div   className={`sticky top-0 h-screen flex flex-col items-center justify-center ${darkMode?"bg-gradient-to-t  from-black to-white" :"bg-gradient-to-t  from-yellow-800 to-white"}  `}>
