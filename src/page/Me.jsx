@@ -36,6 +36,7 @@ const Me = () => {
            <i className='text-4xl'>{skill.icon}</i> 
           </div>
         ))}
+       
       </div>
     </div>
   );

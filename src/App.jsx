@@ -37,7 +37,7 @@ const App = () => {
 <Pro/>
     </div>
     
-    <div  ref={section4Ref} className={`relative  h-screen flex flex-col items-center justify-center  text-white ${darkMode?"bg-black ":"bg-gradient-to-b  from-white to-yellow-800 "} `}>
+    <div  ref={section4Ref} className={`relative  h-fit md:h-screen flex flex-col items-center justify-center  text-white ${darkMode?"bg-black ":"bg-gradient-to-b  from-white to-yellow-800 "} `}>
     <Footer  />
     </div>
 
