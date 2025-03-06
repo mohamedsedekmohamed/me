@@ -84,7 +84,7 @@ const Home = () => {
         <h1 className={`font-medium text-4xl text-white`}>
           {currentText}<span className="ml-1 animate-blink">|</span>
         </h1>
-        <div className="w-full  flex justify-center gap-4 items-center mt-4 mx-2">
+        <div className="w-full  flex justify-center gap-4 items-center mt-4 px-2">
       <i className={` text-md md:text-4xl  transition ease-in hover:scale-150 ${!darkMode ? 'text-white' : 'text-black'}`}>
       <a href="https://www.facebook.com/share/19wsEt1wcs/">
             <FaFacebookSquare />
