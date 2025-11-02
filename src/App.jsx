@@ -21,9 +21,9 @@ const App = () => {
   };
 
   return (
-    <div className="w-screen" ref={section1Ref}> 
+    <div className="max-w-screen" ref={section1Ref}> 
           <Navbar   section4Ref={section4Ref} section1Ref={section1Ref} section2Ref={section2Ref} section3Ref={section3Ref} scrollToSection={scrollToSection}/>
-      <div className="relative w-screen ">
+      <div className="relative max-w-screen ">
     <div   className={`sticky top-0 h-screen flex flex-col items-center justify-center ${darkMode?"bg-gradient-to-t  from-black to-white" :"bg-gradient-to-t  from-yellow-800 to-white"}  `}>
     <Home   />
     </div>

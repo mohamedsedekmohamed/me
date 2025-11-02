@@ -1,7 +1,7 @@
-import cruds from '../assets/cruds.png';
-import tic from '../assets/tic.png';
+import cruds from '../assets/voo.png';
+import tic from '../assets/math.png';
 import mov from '../assets/mov.png';
-import todo from '../assets/todo.png';
+import todo from '../assets/food.png';
 import styled from 'styled-components';
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
 import { useContext } from 'react';
@@ -14,24 +14,24 @@ const Pro = () => {
 
         <div className='flex w-screen flex-wrap justify-center gap-5  my-4 '>
         <div className="book w-[30%] flex-col gap-3">
-    <a href='https://github.com/mohamedsedekmohamed/Cruds' className={`px-2 py-1  rounded-l-4xl text-white  
+    <a href='https://github.com/mohamedsedekmohamed/frontvoo' className={`px-2 py-1  rounded-l-4xl text-white  
     ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>github</a>
-    <a href='https://cruds-mo-sedeks-projects.vercel.app/' className={`px-2 py-1  rounded-l-4xl text-white  
-    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Demo</a>
+    <a href='https://voo-hub.com/' className={`px-2 py-1  rounded-l-4xl text-white  
+    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Production</a>
         <div className={`cover  ${darkMode?"bg-gradient-to-r  from-black to-white":"bg-gradient-to-r from-yellow-800 to-white"}`}>
           <img src={cruds} className='absolute top-0 h-[80%] rounded-2xl'/>
-          <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>Cruds</p>
+          <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>Voo</p>
         </div>
       </div>
 
       <div className="book w-[30%] flex-col gap-3">
-    <a href="https://github.com/mohamedsedekmohamed/Tic-Tac-Toe-game" className={`px-2 py-1  rounded-l-4xl text-white  
+    <a href="https://github.com/mohamedsedekmohamed/Math-House-" className={`px-2 py-1  rounded-l-4xl text-white  
     ${darkMode?" bg-black    hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>github</a>
-    <a href='https://tic-tac-toe-game--tawny.vercel.app/' className={`px-2 py-1  rounded-l-4xl text-white  
-    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Demo</a>
+    <a href='https://mathshouse.net/' className={`px-2 py-1  rounded-l-4xl text-white  
+    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Production</a>
         <div className={`cover  ${darkMode?"bg-gradient-to-r  from-black to-white":"bg-gradient-to-r from-yellow-800 to-white"}`}>
         <img src={tic} className='absolute top-0 h-[80%] pt-8 rounded-2xl object-cover'/>
-        <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>Tic-Tac-Toe</p>
+        <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>MathHouse</p>
         </div>
       </div>
 
@@ -47,13 +47,13 @@ const Pro = () => {
       </div>
 
       <div className="book w-[30%] flex-col gap-3">
-    <a href='https://github.com/mohamedsedekmohamed/to-do-list' className={`px-2 py-1  rounded-l-4xl text-white  
+    <a href='https://github.com/mohamedsedekmohamed/landpageFood2Go' className={`px-2 py-1  rounded-l-4xl text-white  
     ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>github</a>
-    <a href='https://to-do-list-mo.vercel.app/' className={`px-2 py-1  rounded-l-4xl text-white  
-    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Demo</a>
+    <a href='https://food2go.online/' className={`px-2 py-1  rounded-l-4xl text-white  
+    ${darkMode?" bg-black t   hover:bg-black/50":" bg-yellow-800   hover:bg-yellow-800/50"}`}>Production</a>
         <div className={`cover ${darkMode?"bg-gradient-to-r  from-black to-white":"bg-gradient-to-r from-yellow-800 to-white"}`}>
         <img src={todo} className='absolute top-0 h-[80%] rounded-2xl  object-cover pt-6'/>
-        <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>to-do-list</p>
+        <p className={`text-white font-bold m-2 rounded-full px-2 py-1 ${darkMode?" bg-black vv":"bg-yellow-800"}`}>Food2go</p>
         </div>
       </div>
       
