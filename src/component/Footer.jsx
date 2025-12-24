@@ -27,10 +27,10 @@ const Footer = () => {
         );
     };
   return (
-    <div className={`w-full relative h-screen ${!darkMode ? 'bg-yellow-800' : 'bg-white'}`}>
+    <div className={`w-full  flex flex-col items-center relative py-11 ${!darkMode ? 'bg-yellow-800' : 'bg-white'}`}>
       <h2 className={`${!darkMode?" text-white":"text-black"} font-bold text-center uppercase text-4xl mt-5`}>{language==="en"?"contact":"التواصل"}</h2>
      
-      <div className="w-[90%] h-fit my-4 rounded-4xl shadow-2xl mx-auto">
+      <div className="w-[90%] h-fit my-4 rounded-4xl shadow-2xl ">
         <div className="flex flex-col gap-4 p-4">
         <form ref={form} onSubmit={sendEmail}>
         <div className="flex flex-col gap-2">
@@ -80,7 +80,6 @@ const Footer = () => {
           </form>
         </div>
       </div>
-
       
     </div>
   );

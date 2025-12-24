@@ -4,6 +4,10 @@ import { FaHtml5, FaCss3Alt, FaBootstrap, FaGitSquare, FaGithub } from "react-ic
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssLine } from "react-icons/ri";
 import { SiReact } from "react-icons/si";
+import { SiShadcnui } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiPostman } from "react-icons/si";
+import { RxFigmaLogo } from "react-icons/rx";
 
 const Me = () => {
   const {  language } = useContext(DarkModeContext);
@@ -17,6 +21,10 @@ const Me = () => {
     { name: "React", icon: <SiReact />, label: "react" },
     { name: "Git", icon: <FaGitSquare />, label: "react" },
     { name: "GitHub", icon: <FaGithub />, label: "react" },
+    { name: "Shadcn UI", icon: <SiShadcnui />, label: "react" },
+    { name: "Typescript", icon: <SiTypescript />, label: "react" },
+    { name: "Postman", icon: <SiPostman />, label: "react" },
+    { name: "Figma", icon: <RxFigmaLogo />, label: "react" },
   ];
 
   return (
