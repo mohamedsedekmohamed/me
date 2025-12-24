@@ -22,7 +22,7 @@
 
 @keyframes backsun {
   0%, 100% {
-    background-image: linear-gradient(orange, white);
+    background-image: linear-gradient(blue, white);
    }
   25%{
    transform: rotate(90deg);

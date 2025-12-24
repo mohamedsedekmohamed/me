@@ -3,7 +3,7 @@ import { IoIosSunny } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
 import { DarkModeContext } from './DarkModeContext.jsx';
 import { useContext } from "react";
-import { FaHome, FaInfoCircle, FaCode, FaEnvelope } from 'react-icons/fa'; // استيراد الأيقونات
+import { FaHome, FaInfoCircle, FaCode, FaEnvelope } from 'react-icons/fa';
 
 function Navbar({ section1Ref, section2Ref, section3Ref, scrollToSection, section4Ref }) {
   const { darkMode, toggleDarkMode, language, setLanguage } = useContext(DarkModeContext);
@@ -14,14 +14,14 @@ function Navbar({ section1Ref, section2Ref, section3Ref, scrollToSection, sectio
       about: "About",
       content: "Projects",
       contact: "Contact",
-      switchLanguage: " AR",
+      switchLanguage: "AR",
     },
     ar: {
       home: "الرئيسية",
-      about: "من أنا  ",
-      content: "مشاريع ",
-      contact: " للتواصل",
-      switchLanguage: " EN ",
+      about: "من أنا",
+      content: "المشاريع",
+      contact: "التواصل",
+      switchLanguage: "EN",
     },
   };
 
@@ -31,62 +31,75 @@ function Navbar({ section1Ref, section2Ref, section3Ref, scrollToSection, sectio
     localStorage.setItem("language", newLanguage);
   };
 
+  const navLinks = [
+    { name: texts[language].home, icon: <FaHome />, ref: section1Ref },
+    { name: texts[language].about, icon: <FaInfoCircle />, ref: section2Ref },
+    { name: texts[language].content, icon: <FaCode />, ref: section3Ref },
+    { name: texts[language].contact, icon: <FaEnvelope />, ref: section4Ref },
+  ];
+
   return (
-    <div className="container mx-auto sticky top-0 z-50">
-      <nav className={`w-[80%] mx-auto flex justify-between items-center rounded-full mt-2  border-2 border-white p-5  ${darkMode ? 'bg-black' : 'bg-yellow-600'}`}>
-        <div
-          className={`button ${
-            darkMode ? "bg-black border-black" : "bg-yellow-700 border-yellow-600"
-          } cursor-pointer select-none
-          active:translate-y-2 flex flex-col absolute top-50% right-0 p-2 ${
-            darkMode
-              ? "active:[box-shadow:0_0px_0_0_#000000,0_0px_0_0_#00000080] [box-shadow:0_10px_0_0_#000000,0_15px_0_0_#00000080]"
-              : "active:[box-shadow:0_0px_0_0_#eab308,0_0px_0_0_#eab30880] [box-shadow:0_10px_0_0_#eab308,0_15px_0_0_#eab30880]"
-          }
-          active:border-b-[0px]
-          transition-all duration-150
-          rounded-full border-[1px]`}
-          onClick={toggleDarkMode}
-        >
-          <span className='flex flex-col justify-center items-center h-full text-white font-bold text-sm   '>
-            {darkMode ? <i className='text-yellow-600'><FaMoon /></i> : <i className='text-black '> <IoIosSunny /></i>}
-          </span>
-        </div>
-        <div className="flex flex-col absolute top-50% left-0 p-5">
+    <div className="fixed w-full top-4 z-50 px-4">
+      <nav 
+        // الأنميشن هنا يجعل النافبار ينزلق من الأعلى للأسفل عند تحميل الصفحة
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        className={`max-w-4xl mx-auto flex justify-between items-center rounded-2xl py-3 px-6 shadow-2xl transition-all duration-300 border backdrop-blur-md ${
+          darkMode ? 'bg-black/80 border-white/10' : 'bg-blue-600/90 border-blue-400/20'
+        }`}
+      >
+        
+        {/* زر اللغة مع أنميشن ظهور من اليسار (أو اليمين حسب اللغة) */}
+        <div data-aos="fade-right" data-aos-delay="400">
           <button
-            className={`${darkMode ? 'text-black' : 'text-yellow-600'} p-1 bg-white rounded-b-full text-[10px]  sm:text-2xl  transition-all duration-500 ease-in-out
-              transform hover:-translate-y-1 hover:scale-110`}
             onClick={toggleLanguage}
+            className={`w-10 h-10 flex items-center justify-center rounded-full font-bold text-xs transition-all hover:rotate-12 active:scale-90 shadow-lg ${
+              darkMode ? 'bg-white text-black' : 'bg-white text-blue-600'
+            }`}
           >
             {texts[language].switchLanguage}
           </button>
         </div>
-        <ul className="flex w-full justify-around">
-          <li className="mx-2">
-            <button onClick={() => scrollToSection(section1Ref)} className={`font-bold text-white flex items-center`}>
-              <span className="hidden sm:inline transition-all hover:scale-120 hover:font-extrabold">{texts[language].home}</span> 
-              <span className="sm:hidden transition-all hover:scale-120 hover:font-extrabold"><FaHome /></span> 
-            </button>
-          </li>
-          <li className="mx-2">
-            <button onClick={() => scrollToSection(section2Ref)} className={`font-bold text-white flex items-center`}>
-              <span className="hidden sm:inline transition-all hover:scale-120 hover:font-extrabold">{texts[language].about}</span>
-               <span className="sm:hidden transition-all hover:scale-120 hover:font-extrabold"><FaInfoCircle /></span>
-            </button>
-          </li>
-          <li className="mx-2">
-            <button onClick={() => scrollToSection(section3Ref)} className={`font-bold text-white flex items-center`}>
-              <span className="hidden sm:inline transition-all hover:scale-120 hover:font-extrabold">{texts[language].content}</span>
-                <span className="sm:hidden transition-all hover:scale-120 hover:font-extrabold"><FaCode /></span>
-            </button>
-          </li>
-          <li className="mx-2">
-            <button onClick={() => scrollToSection(section4Ref)} className={`font-bold text-white flex items-center`}>
-              <span className="hidden sm:inline transition-all hover:scale-120 hover:font-extrabold">{texts[language].contact}</span>
-                <span className="sm:hidden transition-all hover:scale-120 hover:font-extrabold"><FaEnvelope /></span>
-            </button>
-          </li>
+
+        {/* روابط الـ Navbar مع أنميشن تتابعي (Delay) */}
+        <ul className="flex items-center gap-2 md:gap-8" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+          {navLinks.map((link, index) => (
+            <li 
+              key={index} 
+              data-aos="zoom-in" 
+              data-aos-delay={500 + (index * 100)} // كل لينك يتأخر 100ms عن اللي قبله
+            >
+              <button
+                onClick={() => scrollToSection(link.ref)}
+                className="group relative flex flex-col items-center justify-center text-white"
+              >
+                <span className="text-xl md:hidden transition-transform group-hover:scale-125">
+                  {link.icon}
+                </span>
+                <span className="hidden md:inline text-sm font-bold tracking-wide transition-all group-hover:opacity-100 opacity-80">
+                  {link.name}
+                </span>
+                <span className="absolute -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full rounded-full"></span>
+              </button>
+            </li>
+          ))}
         </ul>
+
+        {/* زر الـ Dark Mode مع أنميشن ظهور من اليمين */}
+        <div data-aos="fade-left" data-aos-delay="400">
+          <div
+            onClick={toggleDarkMode}
+            className={`relative cursor-pointer w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 active:translate-y-1 select-none border ${
+              darkMode 
+                ? "bg-zinc-800 border-zinc-700 [box-shadow:0_4px_0_0_#000,0_6px_0_0_#00000080] active:[box-shadow:0_0px_0_0_#000]" 
+                : "bg-blue-700 border-blue-500 [box-shadow:0_4px_0_0_#1e40af,0_6px_0_0_#1e40af80] active:[box-shadow:0_0px_0_0_#1e40af]"
+            }`}
+          >
+            <span className="text-white text-lg transition-transform hover:scale-110">
+              {darkMode ? <FaMoon className="text-blue-400" /> : <IoIosSunny className="text-white" />}
+            </span>
+          </div>
+        </div>
       </nav>
     </div>
   );
