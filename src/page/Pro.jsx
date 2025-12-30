@@ -3,7 +3,7 @@ import tic from '../assets/math.png';
 import mov from '../assets/mov.png';
 import todo from '../assets/food.png';
 import tick from '../assets/tick.png';
-import ee from '../assets/tick.png';
+import ee from '../assets/ee.png';
 import may from '../assets/may.png';
 import styled from 'styled-components';
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
