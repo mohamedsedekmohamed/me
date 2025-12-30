@@ -3,6 +3,7 @@ import tic from '../assets/math.png';
 import mov from '../assets/mov.png';
 import todo from '../assets/food.png';
 import tick from '../assets/tick.png';
+import ee from '../assets/tick.png';
 import may from '../assets/may.png';
 import styled from 'styled-components';
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
@@ -12,7 +13,7 @@ const Pro = () => {
   const { darkMode, language } = useContext(DarkModeContext);
 
   const projects = [
-    { id: 7, title: "ECOTECH", img: may, github: "https://github.com/mohamedsedekmohamed/ECOTECH-", link: "https://ecotech.systego.net/", type: "Production" },
+    { id: 7, title: "ECOTECH", img: ee, github: "https://github.com/mohamedsedekmohamed/ECOTECH-", link: "https://ecotech.systego.net/", type: "Production" },
     { id: 2, title: "MathHouse", img: tic, github: "https://github.com/mohamedsedekmohamed/Math-House-", link: "https://mathshouse.net/", type: "Production" },
     { id: 3, title: "Movies", img: mov, github: "https://github.com/mohamedsedekmohamed/Movies", link: "https://movies-drab-phi.vercel.app/", type: "Demo" },
     { id: 4, title: "Food2go", img: todo, github: "https://github.com/mohamedsedekmohamed/landpageFood2Go", link: "https://food2go.online/", type: "Production" },
