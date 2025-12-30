@@ -12,10 +12,11 @@ const Pro = () => {
   const { darkMode, language } = useContext(DarkModeContext);
 
   const projects = [
-    { id: 1, title: "Voo", img: cruds, github: "https://github.com/mohamedsedekmohamed/frontvoo", link: "https://voo-hub.com/", type: "Production" },
+    { id: 7, title: "ECOTECH", img: may, github: "https://github.com/mohamedsedekmohamed/ECOTECH-", link: "https://ecotech.systego.net/", type: "Production" },
     { id: 2, title: "MathHouse", img: tic, github: "https://github.com/mohamedsedekmohamed/Math-House-", link: "https://mathshouse.net/", type: "Production" },
     { id: 3, title: "Movies", img: mov, github: "https://github.com/mohamedsedekmohamed/Movies", link: "https://movies-drab-phi.vercel.app/", type: "Demo" },
     { id: 4, title: "Food2go", img: todo, github: "https://github.com/mohamedsedekmohamed/landpageFood2Go", link: "https://food2go.online/", type: "Production" },
+    { id: 1, title: "Voo", img: cruds, github: "https://github.com/mohamedsedekmohamed/frontvoo", link: "https://voo-hub.com/", type: "Production" },
     { id: 5, title: "Tickethub", img: tick, github: "https://github.com/mohamedsedekmohamed/TicketTours", link: "https://tickethub-tours.com/", type: "Production" },
     { id: 6, title: "15may Club", img: may, github: "https://github.com/mohamedsedekmohamed/15-May-club", link: "https://15may.club/admin/home", type: "Production" },
   ];
