@@ -69,3 +69,47 @@
 .animate-animateBrightness {
   animation: animateBrightness 20s linear infinite;
 }
+/* خلفية تقنية للبوابات */
+.gate-bg {
+  background-color: #050505;
+  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* توهج الحواف (Neon Border) */
+.glow-line-left {
+  box-shadow: 5px 0 15px rgba(59, 130, 246, 0.4);
+}
+.glow-line-right {
+  box-shadow: -5px 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* أنميشن الفتح الاحترافي */
+@keyframes slideOpenLeft {
+  0% { transform: translateX(0) skewX(0deg); opacity: 1; }
+  100% { transform: translateX(-105%) skewX(-5deg); opacity: 0.8; }
+}
+
+@keyframes slideOpenRight {
+  0% { transform: translateX(0) skewX(0deg); opacity: 1; }
+  100% { transform: translateX(105%) skewX(5deg); opacity: 0.8; }
+}
+
+.gate-open-left {
+  animation: slideOpenLeft 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+.gate-open-right {
+  animation: slideOpenRight 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+/* أنميشن اللوجو النابض */
+.pulse-glow {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8)); }
+  50% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 1)); }
+}
