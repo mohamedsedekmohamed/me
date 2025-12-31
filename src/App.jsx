@@ -98,7 +98,7 @@ if (loading) {
     <div className="overflow-hidden" ref={section1Ref}> 
           <Navbar   section4Ref={section4Ref} section1Ref={section1Ref} section2Ref={section2Ref} section3Ref={section3Ref} scrollToSection={scrollToSection}/>
       <div className="relative max-w-screen ">
-    <div   className={`sticky top-0 h-screen flex flex-col items-center justify-center ${darkMode?"bg-gradient-to-t  from-black to-white" :"bg-gradient-to-t  from-blue-800 to-white"}  `}>
+    <div   className={`sticky top-30 md:top-20 lg:top-0 h-screen flex flex-col items-center justify-center ${darkMode?"bg-gradient-to-t  from-black to-white" :"bg-gradient-to-t  from-blue-800 to-white"}  `}>
     <Home   />
     </div>
     <div ref={section2Ref} className={`relative  h-fit p-1 flex flex-col items-center justify-center  text-white ${darkMode?" bg-gradient-to-t  from-white to-black ":"bg-gradient-to-b  from-white to-blue-800 "} `}>
