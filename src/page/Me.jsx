@@ -7,7 +7,7 @@ import { SiReact, SiShadcnui, SiTypescript, SiPostman } from "react-icons/si";
 import { RxFigmaLogo } from "react-icons/rx";
 import { SiRedux } from "react-icons/si";
 import styled, { keyframes } from 'styled-components';
-
+import { SiNextdotjs } from "react-icons/si";
 const Me = () => {
   const { language, darkMode } = useContext(DarkModeContext);
 
@@ -25,6 +25,8 @@ const Me = () => {
     { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
     { name: "Figma", icon: <RxFigmaLogo className="text-[#F24E1E]" /> },
     { name: "Redux", icon: <SiRedux className="text-[#5d2d79]" /> },
+      { name: "Next.js", icon: <SiNextdotjs className={darkMode ? "text-white" : "text-black"} /> },
+
   ];
 
   // نكرر المصفوفة مرتين لضمان استمرارية الحركة اللانهائية

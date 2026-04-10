@@ -6,6 +6,7 @@ import tick from '../assets/tick.png';
 import ee from '../assets/ee.png';
 import may from '../assets/may.png';
 import styled from 'styled-components';
+import sea from '../assets/sea.png'
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
 import { useContext } from 'react';
 
@@ -18,8 +19,9 @@ const Pro = () => {
     { id: 3, title: "Movies", img: mov, github: "https://github.com/mohamedsedekmohamed/Movies", link: "https://movies-drab-phi.vercel.app/", type: "Demo" },
     { id: 4, title: "Food2go", img: todo, github: "https://github.com/mohamedsedekmohamed/landpageFood2Go", link: "https://food2go.online/", type: "Production" },
     { id: 1, title: "Voo", img: cruds, github: "https://github.com/mohamedsedekmohamed/frontvoo", link: "https://voo-hub.com/", type: "Production" },
-    { id: 5, title: "Tickethub", img: tick, github: "https://github.com/mohamedsedekmohamed/TicketTours", link: "https://tickethub-tours.com/", type: "Production" },
+    // { id: 5, title: "Tickethub", img: tick, github: "https://github.com/mohamedsedekmohamed/TicketTours", link: "https://tickethub-tours.com/", type: "Production" },
     { id: 6, title: "15may Club", img: may, github: "https://github.com/mohamedsedekmohamed/15-May-club", link: "https://15may.club/admin/home", type: "Production" },
+    { id: 6, title: "Sea Go", img: sea, github: "https://github.com/mohamedsedekmohamed/15-May-club", link: "https://sea-go.org/", type: "Production" },
   ];
 
   return (
@@ -46,14 +48,14 @@ const Pro = () => {
             {/* الأزرار الخلفية */}
             <div className="content-inner">
               <div className="flex flex-col gap-3 w-full px-4">
-                <a 
+                {/* <a 
                   href={project.github} 
                   target="_blank" 
                   rel="noreferrer"
                   className={`py-2 px-4 rounded-lg text-center font-bold transition-all hover:scale-105 shadow-md ${darkMode ? "bg-black text-white" : "bg-blue-800 text-white"}`}
                 >
                   GitHub
-                </a>
+                </a> */}
                 <a 
                   href={project.link} 
                   target="_blank" 

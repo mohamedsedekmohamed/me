@@ -3,7 +3,7 @@ import onepic from "../assets/pic.svg";
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
 import { FaFacebookSquare, FaWhatsappSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAddCall } from "react-icons/md";
-import cv from '../assets/cv.pdf'
+import cv from '../assets/Cv.pdf'
 import styled from 'styled-components';
 
 const Home = () => {
