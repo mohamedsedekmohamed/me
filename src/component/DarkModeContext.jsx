@@ -1,33 +1,42 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import i18n from '../i18n/i18n.js';
 
+export const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    const [darkMode, setDarkMode] = useState(savedDarkMode);
-    const savedLanguage = localStorage.getItem("language") || "en";
-    const [language, setLanguage] = useState(savedLanguage);
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        localStorage.setItem('darkMode', darkMode);
-    }, [darkMode]);
+  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+  const [darkMode, setDarkMode] = useState(savedDarkMode);
 
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
+  const savedLanguage = localStorage.getItem('language') || 'en';
+  const [language, setLanguageState] = useState(savedLanguage);
 
-    return (
-        <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, language, setLanguage }}>
-            {children}
-        </DarkModeContext.Provider>
-    );
-};
-DarkModeProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+  // sync i18n on mount
+  useEffect(() => {
+    i18n.changeLanguage(savedLanguage);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
+
+  // setLanguage يغير الـ state والـ i18n معاً
+  const setLanguage = (lang) => {
+    setLanguageState(lang);
+    localStorage.setItem('language', lang);
+    i18n.changeLanguage(lang);
   };
-  
-  export const DarkModeContext = createContext();
+
+  return (
+    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode, language, setLanguage }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+};
+
+DarkModeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

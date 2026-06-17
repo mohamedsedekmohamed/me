@@ -1,115 +1,157 @@
-  @import "tailwindcss";
-@keyframes back {
-  0%, 100% {
-    background-image: linear-gradient(black, white);
-   }
-  25%{
-   transform: rotate(90deg);
-  }
-  50% {
-    transform:  rotate(180deg);
-    background-color: black;
-  }
-  75%{
-    transform: rotate(270deg);
-  }
+@import "tailwindcss";
+
+/* ===== FONTS ===== */
+* {
+  font-family: 'Inter', 'Cairo', sans-serif;
 }
 
-.animate-back {
-  animation: back 4s ease-in-out infinite;
+/* Arabic text: use Cairo */
+[lang="ar"], [dir="rtl"], .ar-text {
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0 !important;
+  word-spacing: 2px;
+  line-height: 1.9 !important;
 }
 
-
-@keyframes backsun {
-  0%, 100% {
-    background-image: linear-gradient(blue, white);
-   }
-  25%{
-   transform: rotate(90deg);
-  }
-  50% {
-    transform:  rotate(180deg);
-    background-color: black;
-  }
-  75%{
-    transform: rotate(270deg);
-  }
+/* Force Cairo on Arabic unicode ranges */
+:lang(ar), p[dir="rtl"], h1[dir="rtl"], h2[dir="rtl"], h3[dir="rtl"],
+span[dir="rtl"], div[dir="rtl"] {
+  font-family: 'Cairo', sans-serif;
 }
 
-.animate-backsun {
-  animation: backsun 4s ease-in-out infinite;
-}
-
-
-@keyframes autoRun3d {
-  from {
-    transform: perspective(800px) rotateY(-360deg);
-  }
-  to {
-    transform: perspective(800px) rotateY(0deg);
-  }
-}
-
-@keyframes animateBrightness {
-  10% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(0.1);
-  }
-  90% {
-    filter: brightness(1);
-  }
-}
-
-.animate-autoRun3d {
-  animation: autoRun3d 20s linear infinite;
-}
-
-.animate-animateBrightness {
-  animation: animateBrightness 20s linear infinite;
-}
-/* خلفية تقنية للبوابات */
+/* ===== LOADING GATE ===== */
 .gate-bg {
   background-color: #050505;
-  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* توهج الحواف (Neon Border) */
-.glow-line-left {
-  box-shadow: 5px 0 15px rgba(59, 130, 246, 0.4);
-}
-.glow-line-right {
-  box-shadow: -5px 0 15px rgba(59, 130, 246, 0.4);
-}
+.glow-line-left  { box-shadow:  5px 0 20px rgba(59, 130, 246, 0.5); }
+.glow-line-right { box-shadow: -5px 0 20px rgba(59, 130, 246, 0.5); }
 
-/* أنميشن الفتح الاحترافي */
 @keyframes slideOpenLeft {
-  0% { transform: translateX(0) skewX(0deg); opacity: 1; }
-  100% { transform: translateX(-105%) skewX(-5deg); opacity: 0.8; }
+  0%   { transform: translateX(0) skewX(0deg); opacity: 1; }
+  100% { transform: translateX(-105%) skewX(-3deg); opacity: 0; }
 }
-
 @keyframes slideOpenRight {
-  0% { transform: translateX(0) skewX(0deg); opacity: 1; }
-  100% { transform: translateX(105%) skewX(5deg); opacity: 0.8; }
+  0%   { transform: translateX(0) skewX(0deg); opacity: 1; }
+  100% { transform: translateX(105%) skewX(3deg); opacity: 0; }
 }
 
-.gate-open-left {
-  animation: slideOpenLeft 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+.gate-open-left  { animation: slideOpenLeft  1s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
+.gate-open-right { animation: slideOpenRight 1s cubic-bezier(0.76, 0, 0.24, 1) forwards; }
+
+@keyframes pulse-glow-anim {
+  0%, 100% { filter: drop-shadow(0 0 6px  rgba(59, 130, 246, 0.9)); }
+  50%       { filter: drop-shadow(0 0 22px rgba(59, 130, 246, 1));   }
+}
+.pulse-glow { animation: pulse-glow-anim 1.8s ease-in-out infinite; }
+
+/* ===== PAGE TRANSITION OVERLAY ===== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  display: flex;
 }
 
-.gate-open-right {
-  animation: slideOpenRight 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+.page-transition-overlay .pt-left,
+.page-transition-overlay .pt-right {
+  width: 50%;
+  height: 100%;
+  background: #0a0a1a;
+  transform: scaleY(0);
+  transform-origin: bottom;
 }
 
-/* أنميشن اللوجو النابض */
-.pulse-glow {
-  animation: pulse 2s infinite;
+.page-transition-overlay.active .pt-left {
+  animation: ptSlideIn 0.45s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+.page-transition-overlay.active .pt-right {
+  animation: ptSlideIn 0.45s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards;
+}
+.page-transition-overlay.exit .pt-left {
+  animation: ptSlideOut 0.45s cubic-bezier(0.76, 0, 0.24, 1) 0.1s forwards;
+}
+.page-transition-overlay.exit .pt-right {
+  animation: ptSlideOut 0.45s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards;
 }
 
-@keyframes pulse {
-  0%, 100% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8)); }
-  50% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 1)); }
+@keyframes ptSlideIn {
+  0%   { transform: scaleY(0); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+@keyframes ptSlideOut {
+  0%   { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: top; }
+}
+
+/* ===== SCROLL SMOOTH ===== */
+html { scroll-behavior: smooth; }
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #6366f1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: inherit;
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #818cf8, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== GLOW ===== */
+.glow-blue   { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+.glow-indigo { box-shadow: 0 0 30px rgba(99, 102, 241, 0.4); }
+
+/* ===== FLOAT ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* ===== SPIN SLOW ===== */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 25s linear infinite; }
+
+/* ===== SHIMMER ===== */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.3) 50%, transparent 75%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ===== ARABIC FONT HELPERS ===== */
+.font-arabic {
+  font-family: 'Cairo', sans-serif;
+  line-height: 1.9;
+  letter-spacing: 0;
+}
+
+/* Fix Arabic text in buttons/badges */
+button, a, span, p, h1, h2, h3, h4, h5, h6, label, input, textarea {
+  font-family: inherit;
 }

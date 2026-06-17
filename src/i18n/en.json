@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "👋 Hello, I am",
+    "description": "Building modern, interactive, and high-performance web applications with passion.",
+    "downloadCv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I am a passionate web developer with an interest in developing user interfaces. I started my journey in the world of programming through self-learning, where I decided to learn the front-end path from scratch. Through continuous research and experimentation, I acquired the skills I needed to build interactive and engaging websites and web applications.",
+    "techStack": "⚡ Tech Stack",
+    "yearsExp": "Years Experience",
+    "projectsDone": "Projects Done",
+    "productionSites": "Production Sites"
+  },
+  "projects": {
+    "title": "Projects",
+    "hint": "Hover over a card to explore",
+    "visitSite": "Visit Site →"
+  },
+  "contact": {
+    "title": "Contact",
+    "letsTalk": "Let's Talk",
+    "letsTalkDesc": "Feel free to drop a message, I will respond as soon as possible.",
+    "name": "Name",
+    "namePlaceholder": "Your Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Your message here...",
+    "send": "Send →",
+    "sending": "Sending...",
+    "successMsg": "Sent Successfully!",
+    "failMsg": "Failed to send!",
+    "validName": "Name must be at least 3 characters",
+    "validEmail": "Please enter a valid email",
+    "validMessage": "Message is too short"
+  },
+  "footer": {
+    "copy": "© 2025 Mohamed Sedek. Built with ❤️"
+  }
+}
