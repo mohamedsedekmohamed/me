@@ -5,7 +5,7 @@ import onepic from "../assets/pic.svg";
 import { DarkModeContext } from '../component/DarkModeContext.jsx';
 import { FaFacebookSquare, FaWhatsappSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAddCall } from "react-icons/md";
-import cv from '../assets/cvs.pdf';
+import cv from '../assets/mohamed_Sedek.pdf';
 import styled from 'styled-components';
 import Particles from '../component/Particles.jsx';
 import FloatingShapes from '../component/FloatingShapes.jsx';
