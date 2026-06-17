@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import tic  from '../assets/math.png';
 import aln  from '../assets/aln.png';
 import maz  from '../assets/maz.png';
+import codx  from '../assets/codx.png';
 import kee  from '../assets/keeto.png';
 import todo from '../assets/food.png';
 import cruds from '../assets/voo.png';
@@ -95,6 +96,15 @@ const projects = [
     link: "https://alnatech.de/en",
     type: "Production",
     color:   "#7C3AED",
+ // Emerald
+  },
+  {
+    id: 11,
+    title: "codixia",
+    img: codx,
+    link: "https://codixia.vercel.app/",
+    type: "Production",
+    color:   "#818CF8",
  // Emerald
   },
 ];
