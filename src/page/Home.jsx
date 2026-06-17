@@ -185,7 +185,7 @@ const Home = () => {
           transition={{ duration: 0.7, delay: 1.2 }}
         >
           <StyledWrapper darkMode={darkMode}>
-            <a href={cv} download="cvMohamedSedek.pdf" className="button shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
+            <a href={cv}  download="Mohamed_Sedek_CV.pdf"className="button shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
               style={language === 'ar' ? arFont : enFont}>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
                 <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"
